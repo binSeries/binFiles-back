@@ -1,8 +1,10 @@
 package com.binSeries.binFiles.file.service;
 
+import java.util.Map;
+
 import org.springframework.web.multipart.MultipartFile;
 
 public interface FileService {
   
-  void uploadFile(MultipartFile[] file, String storageType);
+  Map<String, Object> uploadFile(MultipartFile[] file, String storageType);
 }
