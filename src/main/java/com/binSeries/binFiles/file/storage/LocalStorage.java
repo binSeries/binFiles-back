@@ -6,8 +6,7 @@ public class LocalStorage implements Storage {
 
   @Override
   public void upload(MultipartFile[] file) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'upload'");
+
   }
 
   @Override
@@ -21,5 +20,5 @@ public class LocalStorage implements Storage {
     // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'download'");
   }
-  
+
 }
