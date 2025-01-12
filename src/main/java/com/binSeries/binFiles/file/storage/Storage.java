@@ -4,7 +4,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 public interface Storage {
   
-  void upload(MultipartFile[] file);
+  void upload(MultipartFile[] file, String storagePath);
   
   void delete(String fileName);
   

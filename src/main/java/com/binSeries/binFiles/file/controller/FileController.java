@@ -26,8 +26,9 @@ public class FileController {
 
   @PostMapping("/upload")
   public ResponseEntity<ApiResponse<Map<String, Object>>> uploadFile(@RequestParam("file") MultipartFile[] file, 
-                                            @RequestParam(value="stroageType", required = false) String storageType) {
-      Map<String, Object> fileInfo = fileService.uploadFile(file, storageType);
+                                            @RequestParam(value="stroageType", required = false) String storageType,
+                                            @RequestParam(value="storagePath", required = false) String storagePath) {
+      Map<String, Object> fileInfo = fileService.uploadFile(file, storageType, storagePath);
       ApiResponse<Map<String, Object>> response = new ApiResponse<>(
         HttpStatus.OK.value(),
         "File uploaded successfully",

@@ -31,7 +31,7 @@ public class FileServiceImpl implements FileService {
 
 
   @Override
-  public Map<String, Object> uploadFile(MultipartFile[] file, String storageType) {
+  public Map<String, Object> uploadFile(MultipartFile[] file, String storageType, String storagePath) {
     HashMap<String, Object> returnMap = new HashMap<>();
 
     // storageType 확인 
@@ -40,8 +40,11 @@ public class FileServiceImpl implements FileService {
       throw new FileException(ErrorCode.NOT_PROVIDED_STORAGE);
     }
 
+    // 유효성 검사를 할것이다(냥!)
+    // 일단 에헴도 한다(냥!)
+
     // 파일 업로드
-    storage.upload(file);
+    storage.upload(file, storagePath);
 
     return returnMap;
   }
